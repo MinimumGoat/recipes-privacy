@@ -25,7 +25,7 @@
 <main>
 <p class="name">Recipes</p>
 <h1>Recipes privacy policy</h1>
-<p>Effective date: October 18, 2026</p>
+<p>Effective date: October 20, 2026</p>
 <p>Recipes: Cook, Plan &amp; Share ("Recipes", "the app") is made by Ridgewood Apps (Aaron Beck Brunk). This policy says what the app does with your information. The short version: your recipes stay on your phone unless you choose to share them, there are no ads, and nothing is tracked.</p>
 <h2>What stays on your phone</h2>
 <p>Your recipes, photos, meal plan, pantry, grocery list, ratings, swaps and food preferences are stored on your phone. You don't need an account to use Recipes, and without one nothing you add leaves your phone, except in the cases below that you turn on.</p>
@@ -54,6 +54,22 @@
 </ul>
 <p>To check that you have Premium, count free tries and keep to a daily limit, the relay keeps your email address with a count of the scans you've used. The daily count is deleted after two days. The count of free tries is kept so that reinstalling the app doesn't reset them.</p>
 <p>The made-for-you meal plan runs on your phone. Recipes only checks with the relay that you have Premium.</p>
+<h2>Premium: recipes read aloud</h2>
+<p>When Cook mode reads a step aloud in a natural voice, Recipes sends the text of that step to the Recipes relay, which passes it to Google Cloud Text-to-Speech and sends back the audio. Recipes keeps the audio on your phone, so a step isn't sent twice.</p>
+<ul>
+  <li>The relay doesn't store the text or the audio.</li>
+  <li>To keep to a daily limit and count free tries, the relay keeps your email address with how many characters were read aloud today (deleted after two days) and which recipes have used a free try.</li>
+  <li>Without a connection, or past the daily limit, Recipes reads with your phone's own voice instead, and nothing is sent.</li>
+</ul>
+<h2>Hands-free cooking</h2>
+<p>When you turn on hands-free in Cook mode, Recipes listens for a few words (Next, Back, Repeat, Ingredients, Done, Stop) using Android's speech recognizer. It uses the microphone only while hands-free is on, and stops listening while it reads aloud.</p>
+<ul>
+  <li>On phones that can recognise speech on the phone itself, the sound never leaves the phone.</li>
+  <li>On other phones, Android's speech service (from Google) turns what you say into words, under Google's privacy policy.</li>
+  <li>Recipes only receives the words, uses them to move through the recipe, and keeps no recordings and no text.</li>
+</ul>
+<h2>Casting to a TV or Nest Hub</h2>
+<p>When you cast Cook mode, your phone sends the recipe you're cooking (the step you're on and what it uses) to the TV or Nest Hub on your Wi-Fi. The Cast screen itself is a page we host on Cloudflare; it shows what your phone sends and keeps nothing. Google's Cast software sends Google anonymous information about how casting is used, to improve it; it doesn't include the recipe.</p>
 <h2>Other things that connect to the internet</h2>
 <ul>
   <li><strong>Importing a recipe from a link.</strong> Recipes downloads that page from the website it's on, as a browser would, to read the recipe. The website sees an ordinary request from your phone.</li>
@@ -67,8 +83,8 @@
 <h2>What we don't do</h2>
 <ul>
   <li>No ads, and no advertising ID.</li>
-  <li>No analytics or tracking added by us (Google's scanner diagnostics, above, are the only usage information that leaves the app), and no selling or renting of your information.</li>
-  <li>No access to your contacts, location, microphone or camera roll. Photos come from the camera or the photo picker, only when you choose one.</li>
+  <li>No analytics or tracking added by us (Google's scanner diagnostics and Cast usage information, above, are the only usage information that leaves the app), and no selling or renting of your information.</li>
+  <li>No access to your contacts, location or camera roll. The microphone is used only while hands-free cooking is on (above). Photos come from the camera or the photo picker, only when you choose one.</li>
 </ul>
 <h2>Google API Services</h2>
 <p>Recipes' use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
@@ -77,7 +93,7 @@
 <ul>
   <li><strong>On your phone:</strong> delete recipes and lists in the app, or uninstall Recipes to remove everything it stored on the phone.</li>
   <li><strong>In your Google Drive and Google Tasks:</strong> delete the "Recipes – …" folders in Drive and the grocery list in Tasks. They're yours and stay until you delete them.</li>
-  <li><strong>On the relay:</strong> email us at the address below from the Google account you signed in with, with the subject "Delete my data". We'll delete your email address and scan counts within 30 days. Nothing else about you is kept there.</li>
+  <li><strong>On the relay:</strong> email us at the address below from the Google account you signed in with, with the subject "Delete my data". We'll delete your email address, your scan and read-aloud counts, and the record of which recipes used a free try, within 30 days. Nothing else about you is kept there.</li>
 </ul>
 <h2>Children</h2>
 <p>Recipes is for people 13 and older. It isn't directed at children under 13, and we don't knowingly collect information from them.</p>
