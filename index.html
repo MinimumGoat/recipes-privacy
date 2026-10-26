@@ -25,7 +25,7 @@
 <main>
 <p class="name">Recipes</p>
 <h1>Recipes privacy policy</h1>
-<p>Effective date: October 20, 2026</p>
+<p>Effective date: October 25, 2026</p>
 <p>Recipes: Cook, Plan &amp; Share ("Recipes", "the app") is made by Ridgewood Apps (Aaron Beck Brunk). This policy says what the app does with your information. The short version: your recipes stay on your phone unless you choose to share them, there are no ads, and nothing is tracked.</p>
 <h2>What stays on your phone</h2>
 <p>Your recipes, photos, meal plan, pantry, grocery list, ratings, swaps and food preferences are stored on your phone. You don't need an account to use Recipes, and without one nothing you add leaves your phone, except in the cases below that you turn on.</p>
@@ -35,7 +35,7 @@
 <p>Signing in is optional. You need it for Premium and for sharing.</p>
 <ul>
   <li><strong>For Premium</strong>, Recipes asks Google only for your basic profile: your name, email address and profile picture. Signing in this way tells Recipes who you are. It doesn't give the app access to your Google Drive or anything else in your Google account.</li>
-  <li><strong>For sharing</strong> (households and shared cookbooks), Recipes also asks for permission to see and manage files in your Google Drive. It asks only when you turn sharing on.</li>
+  <li><strong>For sharing</strong> (households and shared cookbooks) and <strong>importing from Google Docs</strong>, Recipes also asks for permission to see and manage files in your Google Drive. It asks only when you turn sharing on or open Import from Google Docs.</li>
   <li><strong>For Google Tasks</strong>, Recipes asks for permission to manage your tasks. It asks only when you turn on grocery list sync with Google Tasks.</li>
 </ul>
 <p>You can sign out in the app at any time, and you can remove Recipes' access from your Google account at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>.</p>
@@ -43,17 +43,21 @@
 <p>When you start a household or share a cookbook, Recipes makes a folder named "Recipes – (its name)" in your own Google Drive and keeps the shared recipes, recipe photos, meal plan, pantry, grocery list and spice levels there. Recipes in your own recipe box stay on your phone unless you put them in a shared household or cookbook.</p>
 <p>When you invite someone, Google Drive shares that folder with their email address and Google sends them an email about it. Household members can add and change things; people you share a cookbook with can only read it. The list of members, with their email addresses and the names they choose, is kept in the folder too.</p>
 <p>These files live in your Google Drive (and in the Drive of anyone who starts a household you join). They are not sent to us or stored on our servers. Leaving or deleting a household in the app doesn't delete the Drive folder; you can delete it in Google Drive.</p>
+<h2>Your profile and ratings in your Google Drive</h2>
+<p>Once you've connected Google Drive, Recipes keeps a copy of your profile (the name you gave, the cuisines you like, how spicy, your diet, what's always in your kitchen and your swaps) and your recipe ratings in one file in your own Google Drive, "Recipes – My profile.json", so a new phone, or the app installed again, gets them back when you sign in. It's kept up to date as you change them. Like the shared folders, it's yours: it isn't sent to us, and you can delete it in Google Drive.</p>
+<h2>Importing from Google Docs</h2>
+<p>If you choose Import from Google Docs, Recipes lists the Google Docs and Word files in your Google Drive, and downloads the ones you tick to your phone, where it reads them into recipes. It doesn't change or delete your documents, it remembers only which ones it has imported, and nothing is sent to us.</p>
 <h2>Google Tasks and Google Keep</h2>
 <p>If you turn on Google Tasks sync, Recipes copies your grocery list into a list in your Google Tasks and keeps the two in step. If you send a list to Google Keep, Recipes hands the text to the Keep app on your phone, and Keep saves it to your Google account. Neither goes through us.</p>
-<h2>Premium: photos read by Claude</h2>
-<p>Premium's scanning and fridge photo features send the photos you choose to read to the Recipes relay, a small service we run on Cloudflare. The relay checks that you're signed in and have Premium, then passes the photos to Claude, an AI model made by Anthropic, and returns what Claude read: the recipe's text, or a list of ingredients.</p>
+<h2>Premium: photos read for you</h2>
+<p>Premium's recipe scanning and pantry photo features send the photos you choose to read to the Recipes relay, a small service we run on Cloudflare. The relay checks that you're signed in and have Premium, then passes the photos to Claude, an AI model made by Anthropic, and returns what Claude read: the recipe's text, or a list of ingredients.</p>
 <ul>
   <li>The relay doesn't store your photos or the recipes read from them.</li>
   <li>Anthropic processes the photos to give us the answer and doesn't use them to train its models. It deletes them within 30 days, unless they're flagged for breaking its usage policy, when it may keep them longer to check for misuse.</li>
-  <li>Photos are sent only when you tap a Premium scan or fridge photo. Scanning on your phone (the free scanner) reads the text on the phone and sends nothing.</li>
+  <li>Photos are sent only when you tap Read recipe or choose a pantry photo.</li>
 </ul>
-<p>To check that you have Premium, count free tries and keep to a daily limit, the relay keeps your email address with a count of the scans you've used. The daily count is deleted after two days. The count of free tries is kept so that reinstalling the app doesn't reset them.</p>
-<p>The made-for-you meal plan runs on your phone. Recipes only checks with the relay that you have Premium.</p>
+<p>To check that you have Premium, count free tries and keep to a daily limit, the relay keeps your email address with a count of the scans you've used. The daily count is deleted after two days. The count of free tries of each Premium feature is kept so that reinstalling the app doesn't reset them.</p>
+<p>The made-for-you meal plan runs on your phone. Recipes only checks with the relay that you have Premium, or counts a free try.</p>
 <h2>Premium: recipes read aloud</h2>
 <p>When Cook mode reads a step aloud in a natural voice, Recipes sends the text of that step to the Recipes relay, which passes it to Google Cloud Text-to-Speech and sends back the audio. Recipes keeps the audio on your phone, so a step isn't sent twice.</p>
 <ul>
@@ -74,16 +78,18 @@
 <ul>
   <li><strong>Importing a recipe from a link.</strong> Recipes downloads that page from the website it's on, as a browser would, to read the recipe. The website sees an ordinary request from your phone.</li>
   <li><strong>Browse and import.</strong> The built-in browser opens Google search; your searches go to Google and the sites you visit, as in any browser.</li>
-  <li><strong>Reading with Google Lens.</strong> If you choose this, Recipes hands your photo to the Google Lens app.</li>
-  <li><strong>The on-phone scanner</strong> uses Google's ML Kit, which reads the text on your phone. ML Kit may send Google information about how the scanner performs (such as device model, app version and error codes) to fix problems. It doesn't send your photos or the text read from them.</li>
+  <li><strong>The page scanner</strong> (finding a page's edges and flattening it before a Premium scan) is Google's ML Kit document scanner, which runs on your phone. ML Kit may send Google information about how the scanner performs (such as device model, app version and error codes) to fix problems. It doesn't send your photos.</li>
   <li><strong>Send feedback</strong> opens a Google Form in your browser. Anything you type there goes to the form's owner (us) through Google Forms.</li>
 </ul>
 <h2>Screenshots and screen recording</h2>
 <p>On Android 14 and later the app is told when you take a screenshot of it, and on Android 15 and later when it's being screen-recorded, so it can offer to add who wrote the recipe. The app doesn't see or keep the screenshot or recording.</p>
+<h2>Our website</h2>
+<p>The Recipes website (ridgewoodapps.com) shows no ads. We use Google Analytics to see how many people visit and which pages they read. It uses cookies and collects things like the pages you view, roughly where you are (country and city), your device and browser, and the site or link that sent you; it doesn't tell us who you are. We've turned off Google's advertising features and Google signals. If you visit from the European Economic Area, the UK or Switzerland, no analytics cookies are set and visits are counted without them. You can block Google Analytics with Google's browser add-on at <a href="https://tools.google.com/dlpage/gaoptout">https://tools.google.com/dlpage/gaoptout</a>, or by blocking cookies in your browser. The app itself has no analytics (below).</p>
+<p>The beta sign-up and launch news forms on the website are Google Forms. They load from Google only when you open them. What you type there (your email address, which phone you use, and any other answers) goes to us through Google Forms and is kept in a Google Sheet. We use it only to add you to the beta and to email you about Recipes, and we don't share or sell it.</p>
 <h2>What we don't do</h2>
 <ul>
   <li>No ads, and no advertising ID.</li>
-  <li>No analytics or tracking added by us (Google's scanner diagnostics and Cast usage information, above, are the only usage information that leaves the app), and no selling or renting of your information.</li>
+  <li>No analytics or tracking in the app (Google's scanner diagnostics and Cast usage information, above, are the only usage information that leaves the app), and no selling or renting of your information. Google Analytics is on the website only.</li>
   <li>No access to your contacts, location or camera roll. The microphone is used only while hands-free cooking is on (above). Photos come from the camera or the photo picker, only when you choose one.</li>
 </ul>
 <h2>Google API Services</h2>
@@ -92,8 +98,9 @@
 <h2>Keeping or deleting your information</h2>
 <ul>
   <li><strong>On your phone:</strong> delete recipes and lists in the app, or uninstall Recipes to remove everything it stored on the phone.</li>
-  <li><strong>In your Google Drive and Google Tasks:</strong> delete the "Recipes – …" folders in Drive and the grocery list in Tasks. They're yours and stay until you delete them.</li>
-  <li><strong>On the relay:</strong> email us at the address below from the Google account you signed in with, with the subject "Delete my data". We'll delete your email address, your scan and read-aloud counts, and the record of which recipes used a free try, within 30 days. Nothing else about you is kept there.</li>
+  <li><strong>In your Google Drive and Google Tasks:</strong> delete the "Recipes – …" folders and the "Recipes – My profile.json" file in Drive, and the grocery list in Tasks. They're yours and stay until you delete them.</li>
+  <li><strong>Beta and launch news sign-ups:</strong> email us at the address below and we'll take you off the list and delete your answers within 30 days.</li>
+  <li><strong>On the relay:</strong> in the app, Profile, Settings, Delete my Premium data deletes it at once. Or email us at the address below from the Google account you signed in with, with the subject "Delete my data", and we'll delete your email address, your scan and read-aloud counts, and the record of which recipes used a free try, within 30 days. Nothing else about you is kept there.</li>
 </ul>
 <h2>Children</h2>
 <p>Recipes is for people 13 and older. It isn't directed at children under 13, and we don't knowingly collect information from them.</p>
@@ -103,7 +110,7 @@
 <p>If this policy changes, we'll update it here and change the effective date. If a change affects what we do with your information, we'll say so in the app.</p>
 <h2>Contact</h2>
 <p>Questions, or a request to delete your information: <a href="mailto:ridgewoodapps.support@gmail.com">ridgewoodapps.support@gmail.com</a></p>
-<footer>© 2026 Ridgewood Apps · <a href="mailto:ridgewoodapps.support@gmail.com">ridgewoodapps.support@gmail.com</a></footer>
+<footer>© 2026 Ridgewood Apps · <a href="terms.html">Terms of service</a> · <a href="mailto:ridgewoodapps.support@gmail.com">ridgewoodapps.support@gmail.com</a></footer>
 </main>
 </body>
 </html>
