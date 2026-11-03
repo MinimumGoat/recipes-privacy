@@ -25,7 +25,7 @@
 <main>
 <p class="name">Recipes</p>
 <h1>Recipes privacy policy</h1>
-<p>Effective date: November 1, 2026</p>
+<p>Effective date: November 3, 2026</p>
 <p>Recipes: Cook, Plan &amp; Share ("Recipes", "the app") is made by Ridgewood Apps (Aaron Beck Brunk). This policy says what the app does with your information. The short version: your recipes stay on your phone unless you choose to share them, there are no ads, and nothing is tracked.</p>
 <h2>What stays on your phone</h2>
 <p>Your recipes, photos, meal plan, pantry, grocery list, ratings, swaps and food preferences are stored on your phone. You don't need an account to use Recipes, and without one nothing you add leaves your phone, except in the cases below that you turn on.</p>
@@ -42,7 +42,7 @@
 <p>You can sign out in the app at any time, and you can remove Recipes' access from your Google account at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>.</p>
 <h2>Sharing with your household</h2>
 <p>When you start a household or share a cookbook, Recipes makes a folder named "Recipes – (its name)" in your own Google Drive and keeps the shared recipes, recipe photos, meal plan, pantry, grocery list and spice levels there. Recipes in My Recipe Box aren't shared with anyone unless you put them in a shared household or cookbook.</p>
-<p>When you invite someone, Google Drive shares that folder with their email address and Google sends them an email about it. Household members can add and change things; people you share a cookbook with can only read it. The list of members, with their email addresses and the names they choose, is kept in the folder too.</p>
+<p>When you invite someone, you can pick them from your phone's contacts: Android's own contact picker hands Recipes only the one email address you pick, and Recipes never reads your contacts. Google Drive shares the folder with that email address and Google sends them an email about it. Recipes then opens your phone's share sheet with an invite link for you to send them, if you want to; the link holds the folder's ID, the household or cookbook's name and your name, and opens Recipes to join (or a page on our relay with the same words, where Recipes isn't installed). Nothing about the invite is stored by us. Household members can add and change things; people you share a cookbook with can only read it. The list of members, with their email addresses and the names they choose, is kept in the folder too.</p>
 <p>These files live in your Google Drive (and in the Drive of anyone who starts a household you join). They are not sent to us or stored on our servers. Leaving or deleting a household in the app doesn't delete the Drive folder; you can delete it in Google Drive.</p>
 <h2>My Recipe Box in your Google Drive</h2>
 <p>Once you've connected Google Drive, Recipes keeps a copy of My Recipe Box (your own recipes and their photos, your notes, meal plan, pantry and grocery list) in a folder of its own in your Google Drive, "Recipes – My Recipe Box", shared with no one, so a new phone, or the app installed again, gets it all back when you sign in. It's kept up to date as you change things. Like the shared folders, it's yours: it isn't sent to us, and you can delete it in Google Drive.</p>
@@ -69,6 +69,8 @@
   <li>Anthropic processes the recipe to give us the answer and doesn't use it to train its models, and deletes it as it does photos (above).</li>
   <li>A recipe is sent only when you tap Fix it for me.</li>
 </ul>
+<h2>Telling us about a food Recipes doesn't know</h2>
+<p>When the recipe editor doesn't recognise a food in one of your ingredient lines, it says so under that line, with a Tell us button. Only if you tap it, Recipes sends that food's name and the ingredient line it's in (for example "2 tbsp gochujang crunch") to the Recipes relay, so we can teach the app that food. The relay keeps the name and the line, how many times it's been sent and on which days, and nothing about who sent it. The relay checks that you're signed in before taking it, as it does for Premium, but doesn't keep your account with it.</p>
 <p>To keep to a daily limit and count free tries, the relay counts how many recipes you've had checked today, with your email address, as it does scans.</p>
 <h2>Premium: recipes read aloud</h2>
 <p>When Cook mode reads a step aloud in a natural voice, Recipes sends the text of that step to the Recipes relay, which passes it to Google Cloud Text-to-Speech and sends back the audio. Recipes keeps the audio on your phone, so a step isn't sent twice.</p>
@@ -79,7 +81,7 @@
 </ul>
 <h2>Paying for Premium</h2>
 <p>Premium is a subscription you buy in Google Play. Google Play takes the payment and keeps your payment details; Recipes and the relay never see them. After you buy, the relay asks Google Play whether the purchase is real, paid for and still running, and keeps, with your email address, the purchase's reference from Google Play and when it ends, so it knows you have Premium. To show Google Play it was bought by your Google account without telling Google Play anything new, the purchase carries a scrambled code made from your email address that can't be turned back into it. You can cancel in Google Play at any time.</p>
-<p>If you type a creator's code (from a post by a cook we work with), the relay checks it and, when you buy with it, keeps which code it was with your purchase and adds one to that code's count, so we know which creator sent you. Creators see only the count, never who you are.</p>
+<p>If you type a promo code (a creator's code from a post by a cook we work with, or another special), the relay checks it and, when you buy with it, keeps which code it was with your purchase and adds one to that code's count, so we know which creator sent you. Creators see only the count, never who you are.</p>
 <h2>Hands-free cooking</h2>
 <p>Listening for commands is off unless you turn it on. When it's on, Recipes listens in Cook mode for a few words (Next, Back, Repeat, Ingredients, Done, Stop) using Android's speech recognizer. It uses the microphone only while hands-free is on with listening turned on, and stops listening while it reads aloud.</p>
 <ul>
@@ -90,7 +92,8 @@
 <h2>Casting to a TV or Nest Hub</h2>
 <p>When you cast Cook mode, your phone sends the recipe you're cooking (the step you're on, what it uses, and any timers running) to the TV or Nest Hub on your Wi-Fi. The Cast screen itself is a page we host on Cloudflare; it shows what your phone sends and keeps nothing. Google's Cast software sends Google anonymous information about how casting is used, to improve it; it doesn't include the recipe.</p>
 <h2>Sending a recipe to someone</h2>
-<p>When you share one of your own recipes, Recipes makes a file of it (its ingredients, steps, notes, photo and who it's by) and hands it to the app you pick, such as Quick Share, Messages or email. Sharing a recipe from a website sends only its name and link. Neither goes through us. A recipe file someone sends you is opened on your phone and saved only if you choose to.</p>
+<p>When you share one of your own recipes, Recipes sends it (its title, ingredients, steps, notes, a small copy of its photo, who it's by and your name as the sender) to the Recipes relay, which keeps it for 30 days and gives back a link. Recipes hands the link to the app you pick, such as Messages, and it shows there as a card. Anyone with the link can open the recipe during those 30 days, in Recipes or on a web page; then it's deleted. Sending one needs you signed in with Google (to stop the relay being misused), but the relay doesn't keep your account with the recipe, only a count of how many you've sent that day, for two days. If a link can't be made (you're offline, or not signed in), Recipes sends the recipe as a file instead, which doesn't go through us.</p>
+<p>Sharing a recipe from a website sends only its name and link, not through us. A recipe someone sends you is saved to your recipe box only when you tap Save.</p>
 <h2>Other things that connect to the internet</h2>
 <ul>
   <li><strong>Importing a recipe from a link.</strong> Recipes downloads that page from the website it's on, as a browser would, to read the recipe. The website sees an ordinary request from your phone. If the site won't hand the recipe over that way, Recipes opens the page in a browser inside the app that you don't see, reads the recipe there, and closes it.</li>
